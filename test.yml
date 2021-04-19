@@ -1,1 +1,6 @@
-1111
+---
+- hosts: all                  //指定主机
+    remote_user: ansible                         //指定在被管理的主机上执行任务的用户
+    tasks:                                            //任务列表↓
+     - name: disable selinux                //任务名关闭防火墙
+       command: '/sbin/setenforce 0'    //调用command模块 执行关闭防火墙命令
